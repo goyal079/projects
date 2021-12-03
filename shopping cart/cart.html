@@ -30,6 +30,7 @@
         font-weight: 700;
         font-family: "Montserrat";
         color: #2e0707;
+        z-index: 1;
       }
       .left {
         width: 40%;
@@ -62,9 +63,10 @@
       }
       .product {
         box-sizing: border-box;
-        border: 5px solid black;
+        /* border: 2px solid black; */
         width: 330px;
         height: 20rem;
+        position: relative;
         margin: 1rem;
       }
       .details{
@@ -81,6 +83,17 @@
         border: 1px solid black;
         margin-top: 5px;
       }
+      .fa-cart-plus{
+        position: absolute;
+        right:10px;
+        top:10px;
+        color:rgb(63, 46, 3);
+      }
+      .fa-cart-plus:hover{
+        transform: scale(1.15);
+        cursor: pointer;
+      }
+
     </style>
   </head>
   <body>
@@ -100,6 +113,7 @@
     <main class="products">
       <div class="product1 product">
         <img src="https://images.unsplash.com/photo-1587049203042-e04a3c16f4cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x"></i>
         <div class="details">
           <div class="detailNav">
             <p class="itemName">Tomato</p>
@@ -110,6 +124,7 @@
       </div>
       <div class="product2 product">
         <img src="https://images.unsplash.com/photo-1587411768638-ec71f8e33b78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x"></i>
         <div class="details">
           <div class="detailNav">
             <p class="itemName">Tomato</p>
@@ -120,6 +135,7 @@
       </div>
       <div class="product3 product">
         <img src="https://images.unsplash.com/photo-1587486913049-53fc88980cfc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x"></i>
         <div class="details">
           <div class="detailNav">
           <p class="itemName">Tomato</p>
@@ -130,6 +146,7 @@
       </div>
       <div class="product4 product">
         <img src="https://images.unsplash.com/photo-1587049016823-69ef9d68bd44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x"></i>
         <div class="details">
           <div class="detailNav">
           <p class="itemName">Tomato</p>
@@ -140,6 +157,7 @@
       </div>
       <div class="product5 product">
         <img src="https://images.unsplash.com/photo-1587334207477-cb3e3ff0637f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x"></i>
         <div class="details">
           <div class="detailNav">
           <p class="itemName">Tomato</p>
@@ -150,6 +168,7 @@
       </div>
       <div class="product6 product">
         <img src="https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=601&q=80" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x"></i>
         <div class="details">
           <div class="detailNav">
           <p class="itemName">Tomato</p>
@@ -160,6 +179,7 @@
       </div>
       <div class="product7 product">
         <img src="https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x"></i>
         <div class="details">
           <div class="detailNav">
           <p class="itemName">Tomato</p>
@@ -170,6 +190,7 @@
       </div>
       <div class="product8 product">
         <img src="https://images.unsplash.com/photo-1587334207259-f0b0ad8bde80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x"></i>
         <div class="details">
           <div class="detailNav">
           <p class="itemName">Tomato</p>
@@ -180,6 +201,7 @@
       </div>
       <div class="product9 product">
         <img src="https://images.unsplash.com/photo-1582281298055-e25b84a30b0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=605&q=80" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x"></i>
         <div class="details">
           <div class="detailNav">
           <p class="itemName">Tomato</p>
@@ -190,6 +212,7 @@
       </div>
       <div class="product10 product">
         <img src="https://images.unsplash.com/photo-1587334206596-c0f9f7dccbe6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=581&q=80" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x"></i>
         <div class="details">
           <div class="detailNav">
           <p class="itemName">Tomato</p>
