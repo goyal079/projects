@@ -15,9 +15,13 @@
         margin: 0;
         padding: 0;
       }
+      
       .bars {
         display: none;
         margin-left: 30px;
+      }
+      .bars:hover{
+        cursor: pointer;
       }
       .nav {
         position: fixed;
@@ -33,6 +37,7 @@
         color: #3b1e1b;
         z-index: 1;
         border-bottom: 1px solid rgb(212, 211, 211);
+        transition: all 250ms;
       }
       .left {
         width: 40%;
@@ -55,12 +60,18 @@
         transform: scale(1.2);
         cursor: pointer;
       }
+      .baractive{
+        margin: 30px auto;
+      }
+
+      .navactive{
+        height: 100vh;
+      }
       /* Nav ends */
       /*  product section starts*/
       .products {
         display: flex;
         flex-wrap: wrap;
-        margin: 2rem auto;
         margin-top: 4rem;
         justify-content: space-evenly;
         background-color: #F9F1F0;
@@ -111,19 +122,30 @@
         transform: scale(1.15);
         cursor: pointer;
       }
-      @media only screen and (max-width:800px){
+      @media (max-width:800px){
         .bars{
           display:block;
+          overflow: hidden;
         }
         .left{
           display:none;
         }
+        ul{
+          margin-top:30px;
+         }
       }
     </style>
   </head>
   <body>
-    <nav class="nav">
-      <div class="bars item"><i id="bugerBar" class="fa fa-bars fa-2x"></i></div>
+    <nav class="nav" id="nav">
+      <div class="bars item" id="bars"><i id="bugerBar" class="fa fa-bars fa-2x"></i>
+      <ul id="dropbar">
+        <li>Home</li>
+        <li>About</li>
+        <li>Products</li>
+        <li>Account</li>
+      </ul>
+      </div>
       <div class="left">
         <div class="item">Home</div>
         <div class="item">About</div>
@@ -247,5 +269,6 @@
         </div>
       </div>
     </main>
+    <script src='cart.js'></script>
   </body>
 </html>
