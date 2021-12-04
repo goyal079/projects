@@ -26,14 +26,14 @@
   height: 58vh;
   margin: 5rem auto 2rem auto;
   padding: 0.55rem;
-  background-color: rgba(3, 35, 51, 0.9);
+  background-color: rgba(5, 24, 34, 0.9);
   color: white;
   border-radius: 5px;
 }
 .btn {
   grid-column: span 2;
   padding: 2rem;
-  background-color: rgba(226, 214, 214, 0.1);
+  background-color: rgba(92, 88, 88, 0.1);
   border-radius: 3px;
   border: 0.2px solid rgb(116, 115, 115);
 }
@@ -43,28 +43,28 @@
 .span3 {
   padding: 2rem;
   grid-column: span 3;
-  background-color: rgba(226, 214, 214, 0.1);
+  background-color: rgba(92, 88, 88, 0.1);
   border-radius: 3px;
   border: 0.2px solid rgb(116, 115, 115);
 }
 .span4 {
   padding: 2rem;
   grid-column: span 4;
-  background-color: rgba(226, 214, 214, 0.1);
+  background-color: rgba(92, 88, 88, 0.1);
   border-radius: 3px;
   border: 0.2px solid rgb(116, 115, 115);
 }
 .span5 {
   padding: 2rem;
   grid-column: span 5;
-  background-color: rgba(226, 214, 214, 0.1);
+  background-color: rgba(92, 88, 88, 0.1);
   border-radius: 3px;
   border: 0.2px solid rgb(116, 115, 115);
 }
 .space {
   padding: 2rem;
   grid-column: span 16;
-  background-color: rgba(226, 214, 214, 0.1);
+  background-color: rgba(92, 88, 88, 0.1);
   border-radius: 3px;
   border: 0.2px solid rgb(116, 115, 115);
 }
