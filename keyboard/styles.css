@@ -7,12 +7,59 @@
 
 #screen {
   display: block;
-  height: 200px;
-  width: 1080px;
+  height: 30vh;
+  width: 55%;
   background-color: #fff;
   margin: 2vh auto;
   padding: 30px;
   font-size: large;
   border: 5px solid #333;
   border-radius: 5px;
+}
+
+.board-container {
+  display: grid;
+  grid-template-columns: repeat(30, 2.98%);
+  grid-template-rows: repeat(5, 4.7rem);
+  gap: 5px;
+  width: 90vw;
+  height: 58vh;
+  margin: 5rem auto 2rem auto;
+  padding: 0.55rem;
+  background-color: rgba(3, 35, 51, 0.9);
+  color: white;
+  border-radius: 5px;
+}
+.btn {
+  grid-column: span 2;
+  padding: 2rem;
+  background-color: rgba(226, 214, 214, 0.1);
+  border-radius: 3px;
+}
+.btn:hover{
+  background-color: rgba(226, 214, 214, 0.5);
+}
+.span3 {
+  padding: 2rem;
+  grid-column: span 3;
+  background-color: rgba(226, 214, 214, 0.1);
+  border-radius: 3px;
+}
+.span4 {
+  padding: 2rem;
+  grid-column: span 4;
+  background-color: rgba(226, 214, 214, 0.1);
+  border-radius: 3px;
+}
+.span5 {
+  padding: 2rem;
+  grid-column: span 5;
+  background-color: rgba(226, 214, 214, 0.1);
+  border-radius: 3px;
+}
+.space {
+  padding: 2rem;
+  grid-column: span 16;
+  background-color: rgba(226, 214, 214, 0.1);
+  border-radius: 3px;
 }
