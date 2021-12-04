@@ -35,8 +35,9 @@
   padding: 2rem;
   background-color: rgba(226, 214, 214, 0.1);
   border-radius: 3px;
+  border: 0.2px solid rgb(116, 115, 115);
 }
-.btn:hover{
+.btn:hover {
   background-color: rgba(226, 214, 214, 0.5);
 }
 .span3 {
@@ -44,22 +45,26 @@
   grid-column: span 3;
   background-color: rgba(226, 214, 214, 0.1);
   border-radius: 3px;
+  border: 0.2px solid rgb(116, 115, 115);
 }
 .span4 {
   padding: 2rem;
   grid-column: span 4;
   background-color: rgba(226, 214, 214, 0.1);
   border-radius: 3px;
+  border: 0.2px solid rgb(116, 115, 115);
 }
 .span5 {
   padding: 2rem;
   grid-column: span 5;
   background-color: rgba(226, 214, 214, 0.1);
   border-radius: 3px;
+  border: 0.2px solid rgb(116, 115, 115);
 }
 .space {
   padding: 2rem;
   grid-column: span 16;
   background-color: rgba(226, 214, 214, 0.1);
   border-radius: 3px;
+  border: 0.2px solid rgb(116, 115, 115);
 }
