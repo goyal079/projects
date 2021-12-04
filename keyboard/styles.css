@@ -68,3 +68,10 @@
   border-radius: 3px;
   border: 0.2px solid rgb(116, 115, 115);
 }
+.shift {
+  background-color: rgb(247, 252, 247);
+  color: rgb(5, 24, 34);
+}
+.shift:hover {
+  background-color: ivory;
+}
