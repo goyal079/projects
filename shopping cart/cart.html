@@ -151,26 +151,43 @@
       #cart-table{
         margin:2% auto;
         width:90vw;
-        border:1px solid black; 
+        /* border:1px solid black;  */
         padding:1rem;
 
-      }thead{
-        border:1px solid black; 
       }
+      /* thead{ */
+        /* border:1px solid black;  */
+      /* } */
+
       th{
-        border:1px solid black; 
+        /* border:1px solid black;  */
         width:80px;
         text-align: center;
         padding:1rem;
+        font-size: 25px;
       }
       td{
-        border:1px solid black; 
+        /* border:1px solid black;  */
         width:80px;
         text-align: center;
         font-weight: 500;
         padding:1rem;
+        font-size: 25px;
       }
-
+      #rmbtn{
+        color:black;
+        /* border: 1px solid black; */
+        /* font-size: 50px; */
+      }
+      #check-button{
+        background-color: rgb(201, 44, 117);
+        text-align: center;
+        padding: 1em;
+        margin: 5px auto;
+        width:180px;
+        height: 50px;
+        color:rgb(0, 0, 0);
+      }
     </style>
   </head>
   <body>
@@ -276,9 +293,12 @@
           <th>Total</th>
           <td ></td>
           <td ></td>
-          <td ></td>
+          <td id="total"></td>
         </tfoot>
       </table>
+      <div class="checkout">
+        <div id="check-button">Checkout Cart</div>
+      </div>
     </section>
     <script src='cart.js'></script>
   </body>
