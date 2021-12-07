@@ -149,8 +149,8 @@
         display:none;
       }
       #cart-table{
-        margin:10% auto;
-        width:40vw;
+        margin:2% auto;
+        width:90vw;
         border:1px solid black; 
         padding:1rem;
 
@@ -160,11 +160,15 @@
       th{
         border:1px solid black; 
         width:80px;
-        /* padding:0.5rem; */
+        text-align: center;
+        padding:1rem;
       }
       td{
         border:1px solid black; 
         width:80px;
+        text-align: center;
+        font-weight: 500;
+        padding:1rem;
       }
 
     </style>
@@ -191,7 +195,7 @@
     </nav>
     <!-- products section -->
     <main class="products">
-      <div class="product1 product" id="Tomato">
+      <div class="product1 product" id="Toma-to">
         <img src="https://images.unsplash.com/photo-1587049203042-e04a3c16f4cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="image"></img >
         <i class="fa fa-cart-plus fa-2x" ></i>
         <div class="details">
@@ -202,7 +206,7 @@
           <p class="info">Lorem ipsum dolor sit amet.</p>
         </div>
       </div>
-      <div class="product2 product" id="Cucumber">
+      <div class="product2 product" id="Cucum-ber">
         <img src="https://images.unsplash.com/photo-1587411768638-ec71f8e33b78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="image"></img >
         <i class="fa fa-cart-plus fa-2x"></i>
         <div class="details">
@@ -213,7 +217,7 @@
           <p class="info">Lorem ipsum dolor sit amet.</p>
         </div>
       </div>
-      <div class="product3 product" id="Eggs">
+      <div class="product3 product" id="Eg-gs">
         <img src="https://images.unsplash.com/photo-1587486913049-53fc88980cfc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" class="image"></img >
         <i class="fa fa-cart-plus fa-2x" ></i>
         <div class="details">
@@ -224,7 +228,7 @@
           <p class="info">Lorem ipsum dolor sit amet.</p>
         </div>
       </div>
-      <div class="product4 product" id="CoffeeBeans">
+      <div class="product4 product" id="Coffee-Beans">
         <img src="https://images.unsplash.com/photo-1587049016823-69ef9d68bd44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="image"></img >
         <i class="fa fa-cart-plus fa-2x" ></i>
         <div class="details">
@@ -235,7 +239,7 @@
           <p class="info">Lorem ipsum dolor sit amet.</p>
         </div>
       </div>
-      <div class="product5 product" id="Orange">
+      <div class="product5 product" id="Ora-nge">
         <img src="https://images.unsplash.com/photo-1587334207477-cb3e3ff0637f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="image"></img >
         <i class="fa fa-cart-plus fa-2x" ></i>
         <div class="details">
@@ -246,7 +250,7 @@
           <p class="info">Lorem ipsum dolor sit amet.</p>
         </div>
       </div>
-      <div class="product6 product" id="GreenPea">
+      <div class="product6 product" id="Green-Pea">
         <img src="https://images.unsplash.com/photo-1587049585169-c526077ca3cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="image"></img >
         <i class="fa fa-cart-plus fa-2x" ></i>
         <div class="details">
@@ -267,8 +271,13 @@
           <th>Sub-Total</th>
         </thead>
         <tbody id="cart-items">
-          
         </tbody>
+        <tfoot id="cart-total">
+          <th>Total</th>
+          <td ></td>
+          <td ></td>
+          <td ></td>
+        </tfoot>
       </table>
     </section>
     <script src='cart.js'></script>
