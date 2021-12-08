@@ -38,6 +38,30 @@ const vegetables = {
     name: "Orange",
     price: "2$/kg",
   },
+  Onion: {
+    name: "Onion",
+    price: "2.4$/kg",
+  },
+  Banana: {
+    name: "Banana",
+    price: "1.2$/kg",
+  },
+  WaterMelon: {
+    name: "Water Melon",
+    price: "4.8$/kg",
+  },
+  EggPlant: {
+    name: "Egg Plant",
+    price: "2.7$/kg",
+  },
+  Broccoli: {
+    name: "Broccoli",
+    price: "1.4$/kg",
+  },
+  Avacado: {
+    name: "Avacado",
+    price: "3$/kg",
+  },
 };
 
 function toNum(pr) {
@@ -55,7 +79,7 @@ function total() {
     sum += indPrice;
     i++;
   }
-  cartTotal.innerText = sum + "$";
+  cartTotal.innerText = sum.toFixed(2) + "$";
 }
 function reconstruct() {
   for (vege of Object.keys(localStorage)) {
@@ -75,8 +99,8 @@ function reconstruct() {
       ) + "$";
     rmBtn.setAttribute("class", "rmbtn");
     rmBtn.innerHTML = '<i  class="fa fa-trash fa-2x"></i>';
-    rmBtn.addEventListener("click", (e) => {
-      let parent = e.target.parentElement;
+    rmBtn.firstChild.addEventListener("click", (e) => {
+      let parent = e.target.parentElement.parentElement;
       localStorage.removeItem(vege);
       parent.remove();
       total();
@@ -126,8 +150,8 @@ function addToCart(item) {
       ) + "$";
     rmBtn.setAttribute("class", "rmbtn");
     rmBtn.innerHTML = '<i  class="fa fa-trash"></i>';
-    rmBtn.addEventListener("click", (e) => {
-      let parent = e.target.parentElement;
+    rmBtn.firstChild.addEventListener("click", (e) => {
+      let parent = e.target.parentElement.parentElement;
       localStorage.removeItem(vegId);
       parent.remove();
       total();
@@ -142,12 +166,14 @@ function addToCart(item) {
     total();
   }
 }
+const checked = document.getElementById("checkedout");
 
 let cartIcons = document.querySelectorAll(".fa-cart-plus");
 cartIcons.forEach((icon) => {
   icon.addEventListener("click", (e) => {
     let addedItem = e.target.parentElement;
     addToCart(addedItem);
+    checked.style.display = "none";
   });
 });
 
@@ -158,4 +184,14 @@ checkout.addEventListener("click", () => {
   }
   total();
   localStorage.clear();
+});
+window.setInterval(() => {
+  if (cartTotal.innerText === "" || cartTotal.innerText === "0.00$") {
+    checked.style.display = "block";
+  } else {
+    checked.style.display = "none";
+  }
+}, 50);
+checked.addEventListener("click", () => {
+  cartPage.classList.add("hide");
 });

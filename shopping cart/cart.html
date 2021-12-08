@@ -9,186 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      
-      .bars {
-        display: none;
-        margin-left: 30px;
-      }
-      .bars:hover{
-        cursor: pointer;
-      }
-      .nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 4rem;
-        background-color: #29130f;
-        display: flex;
-        justify-content: space-between;
-        font-size: 1rem;
-        font-weight: 700;
-        font-family: "Montserrat";
-        color: #fffbfb;
-        z-index: 1;
-        border-bottom: 1px solid rgb(212, 211, 211);
-        transition: all 250ms;
-      }
-      .left {
-        width: 40%;
-        display: flex;
-        justify-content: space-around;
-      }
-      .right {
-        margin-right: 30px;
-      }
-      
-      .item {
-        box-sizing: border-box;
-        height: 100%;
-        padding-top: 1.3rem;
-      }
-      .cart{
-        padding-top: 0.5rem;
-      }
-      .cart:hover{
-        transform: scale(1.2);
-        cursor: pointer;
-      }
-      .baractive{
-        margin: 30px auto;
-      }
-
-      .navactive{
-        height: 100vh;
-      }
-      /* Nav ends */
-      /*  product section starts*/
-      .products {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 4rem;
-        padding: auto;
-        justify-content: space-around;
-        background-color: #F9F1F0;
-        font-family: 'Montserrat';
-      }
-      .image{
-        width:100%;
-        height: 75%;
-        object-fit: cover;
-        border-bottom: 1.5px solid rgb(212, 211, 211);
-      }
-      .product {  
-        box-sizing: border-box;
-        width: 330px;
-        height: 20rem;
-        position: relative;
-        margin: 1rem;
-        border-radius: 0.3rem;
-        background-color: #fff;
-        box-shadow: 0 0 3px 3px rgb(212, 209, 209);
-      }
-      .details{
-        padding:10px;
-      }
-      .detailNav{
-        display:flex; 
-        justify-content: space-between;
-        margin-bottom: 10px;
-        color: #3f1414;
-        font-weight: 800;
-        font-size: 18px;
-      }
-      .qnt{
-        color: rgb(243, 136, 6);
-      }
-      .info{
-        font-size: 15px;
-        color:#5c4747;
-        font-weight: 500;
-      }
-      .fa-cart-plus{
-        position: absolute;
-        right:10px;
-        top:10px;
-        color:#B95C50;
-      }
-      .fa-cart-plus:hover{
-        transform: scale(1.15);
-        cursor: pointer;
-      }
-      @media (max-width:800px){
-        .bars{
-          display:block;
-          overflow: hidden;
-        }
-        .left{
-          display:none;
-        }
-        ul{
-          margin-top:30px;
-         }
-      }
-      .cart-page{
-        width:100%;
-        height: 100%;
-        position: fixed;
-        top: 4rem;
-        border: 1px solid black;
-        z-index: 10;
-        background-color:rgb(236, 231, 231);
-        /* opacity: 0.5; */
-      }
-      .hide{
-        display:none;
-      }
-      #cart-table{
-        margin:2% auto;
-        width:90vw;
-        /* border:1px solid black;  */
-        padding:1rem;
-
-      }
-      /* thead{ */
-        /* border:1px solid black;  */
-      /* } */
-
-      th{
-        /* border:1px solid black;  */
-        width:80px;
-        text-align: center;
-        padding:1rem;
-        font-size: 25px;
-      }
-      td{
-        /* border:1px solid black;  */
-        width:80px;
-        text-align: center;
-        font-weight: 500;
-        padding:1rem;
-        font-size: 25px;
-      }
-      #rmbtn{
-        color:black;
-        /* border: 1px solid black; */
-        /* font-size: 50px; */
-      }
-      #check-button{
-        background-color: rgb(201, 44, 117);
-        text-align: center;
-        padding: 1em;
-        margin: 5px auto;
-        width:180px;
-        height: 50px;
-        color:rgb(0, 0, 0);
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <nav class="nav" id="nav">
@@ -278,8 +99,80 @@
           <p class="info">Lorem ipsum dolor sit amet.</p>
         </div>
       </div>
+      <div class="product7 product" id="Oni-on">
+        <img src="https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x" ></i>
+        <div class="details">
+          <div class="detailNav">
+          <p class="itemName">Onion</p>
+          <p class="qnt">2.4$/kg</p>
+          </div>
+          <p class="info">Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+      <div class="product8 product" id="Bana-na">
+        <img src="https://images.unsplash.com/photo-1587334206596-c0f9f7dccbe6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=581&q=80" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x" ></i>
+        <div class="details">
+          <div class="detailNav">
+          <p class="itemName">Banana</p>
+          <p class="qnt">1.2$/kg</p>
+          </div>
+          <p class="info">Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+      <div class="product9 product" id="Water-Melon">
+        <img src="https://images.unsplash.com/photo-1582281298055-e25b84a30b0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=905&q=80" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x" ></i>
+        <div class="details">
+          <div class="detailNav">
+          <p class="itemName">Water Melon</p>
+          <p class="qnt">4.8$/kg</p>
+          </div>
+          <p class="info">Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+      <div class="product10 product" id="Egg-Plant">
+        <img src="https://images.unsplash.com/photo-1615484477201-9f4953340fab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x" ></i>
+        <div class="details">
+          <div class="detailNav">
+          <p class="itemName">Egg Plant</p>
+          <p class="qnt">2.7$/kg</p>
+          </div>
+          <p class="info">Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+      <div class="product11 product" id="Broc-coli">
+        <img src="https://images.unsplash.com/photo-1615485021022-dec8994adeba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x" ></i>
+        <div class="details">
+          <div class="detailNav">
+          <p class="itemName">Broccoli</p>
+          <p class="qnt">1.4$/kg</p>
+          </div>
+          <p class="info">Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+      <div class="product10 product" id="Ava-cado">
+        <img src="https://images.unsplash.com/photo-1519162808019-7de1683fa2ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80" class="image"></img >
+        <i class="fa fa-cart-plus fa-2x" ></i>
+        <div class="details">
+          <div class="detailNav">
+          <p class="itemName">Avacado</p>
+          <p class="qnt">3$/kg</p>
+          </div>
+          <p class="info">Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
     </main>
     <section class="cart-page hide" id="cart-page">
+      <div id="checkedout"class="checkout-container">
+        <div class="checkout-modal"> 
+          <p> Your cart seems too light..</p>
+          <p> Let's pick out some fresh groceries for you!!</p>
+        </div>
+      </div>
       <table id="cart-table">
         <thead id="table-head">
           <th>Product</th>
@@ -291,13 +184,13 @@
         </tbody>
         <tfoot id="cart-total">
           <th>Total</th>
-          <td ></td>
-          <td ></td>
-          <td id="total"></td>
+          <td >--</td>
+          <td >--</td>
+          <th id="total"></th>
         </tfoot>
       </table>
       <div class="checkout">
-        <div id="check-button">Checkout Cart</div>
+        <div id="check-button">CHECKOUT</div>
       </div>
     </section>
     <script src='cart.js'></script>
