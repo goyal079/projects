@@ -12,7 +12,8 @@ const cartPage = document.getElementById("cart-page");
 cart.addEventListener("click", () => {
   cartPage.classList.toggle("hide");
 });
-// add to cart
+
+// cart object
 const vegetables = {
   Tomato: {
     name: "Tomato",
@@ -63,13 +64,11 @@ const vegetables = {
     price: "3$/kg",
   },
 };
-
+// functions
 function toNum(pr) {
   return Number(pr.split("$")[0]);
 }
 
-const cartTotal = document.getElementById("total");
-const tableBody = document.getElementById("cart-items");
 function total() {
   let i = 0;
   let sum = 0;
@@ -81,6 +80,12 @@ function total() {
   }
   cartTotal.innerText = sum.toFixed(2) + "$";
 }
+
+// add to cart
+
+const cartTotal = document.getElementById("total");
+const tableBody = document.getElementById("cart-items");
+
 function reconstruct() {
   for (vege of Object.keys(localStorage)) {
     let itemRow = document.createElement("tr");
@@ -93,10 +98,9 @@ function reconstruct() {
     itemName.innerText = vegetables[vege].name;
     itemPrice.innerText = vegetables[vege].price;
     itemQty.innerText = localStorage.getItem(vege);
+
     itemTotal.innerText =
-      (Number(itemPrice.innerText.split("$")[0]) * itemQty.innerText).toFixed(
-        2
-      ) + "$";
+      (toNum(itemPrice.innerText) * Number(itemQty.innerText)).toFixed(2) + "$";
     rmBtn.setAttribute("class", "rmbtn");
     rmBtn.innerHTML = '<i  class="fa fa-trash fa-2x"></i>';
     rmBtn.firstChild.addEventListener("click", (e) => {
@@ -128,9 +132,7 @@ function addToCart(item) {
     localStorage[vegId] = Number(localStorage[vegId]) + 1;
     itemQty.innerText = localStorage[vegId];
     itemTotal.innerText =
-      (Number(itemPrice.innerText.split("$")[0]) * itemQty.innerText).toFixed(
-        2
-      ) + "$";
+      (toNum(itemPrice.innerText) * Number(itemQty.innerText)).toFixed(2) + "$";
     total();
   } else {
     let itemRow = document.createElement("tr");
@@ -145,9 +147,7 @@ function addToCart(item) {
     itemQty.innerText = 1;
     const quant = itemQty.innerText;
     itemTotal.innerText =
-      (Number(itemPrice.innerText.split("$")[0]) * itemQty.innerText).toFixed(
-        2
-      ) + "$";
+      (toNum(itemPrice.innerText) * Number(quant)).toFixed(2) + "$";
     rmBtn.setAttribute("class", "rmbtn");
     rmBtn.innerHTML = '<i  class="fa fa-trash"></i>';
     rmBtn.firstChild.addEventListener("click", (e) => {
@@ -166,6 +166,8 @@ function addToCart(item) {
     total();
   }
 }
+
+// cart function operation
 const checked = document.getElementById("checkedout");
 
 let cartIcons = document.querySelectorAll(".fa-cart-plus");
@@ -177,6 +179,7 @@ cartIcons.forEach((icon) => {
   });
 });
 
+// checkout button
 const checkout = document.getElementById("check-button");
 checkout.addEventListener("click", () => {
   while (tableBody.hasChildNodes()) {
@@ -185,6 +188,8 @@ checkout.addEventListener("click", () => {
   total();
   localStorage.clear();
 });
+
+// cart modal display
 window.setInterval(() => {
   if (cartTotal.innerText === "" || cartTotal.innerText === "0.00$") {
     checked.style.display = "block";
