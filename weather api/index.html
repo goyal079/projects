@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <style>
       * {
         margin: 0;
@@ -12,8 +16,8 @@
         box-sizing: border-box;
       }
       .container {
-        background-color: rgb(219, 217, 213);
-        width: 400px;
+        background-color: rgb(216, 216, 216);
+        width: 370px;
         height: 650px;
         margin: 3% auto;
         border-radius: 7%;
@@ -24,6 +28,20 @@
         background-color: #fff;
         height: 85%;
         width: 100%;
+      }
+      .nav {
+        display: flex;
+        height: 10%;
+        justify-content: space-between;
+        color: rgb(51, 51, 51);
+        padding: 0.5rem;
+      }
+
+      #location {
+        padding: 0.4rem;
+        font-family: "Montserrat";
+        font-weight: 600;
+        letter-spacing: 0.15rem;
       }
       .thumb {
         background-color: #fff;
@@ -38,8 +56,13 @@
     <div class="container">
       <div class="screen">
         <div class="nav">
-          
+          <!-- <i class="fal fa-bars"></i> -->
+          <i id="bugerBar" class="fa fa-bars fa-2x"></i>
+          <p id="location">PARIS</p>
+          <img src="./search.png" id="search" alt="" />
         </div>
+        <div class="day"></div>
+        <div class="time"></div>
       </div>
       <div class="thumb"></div>
     </div>
