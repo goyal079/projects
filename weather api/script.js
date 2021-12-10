@@ -1,4 +1,11 @@
-let loc = document.getElementById("location");
+const loc = document.getElementById("location");
+const mainTemp = document.getElementById("prime-temp");
+const min = document.getElementById("min");
+const max = document.getElementById("max");
+const feelsLike = document.getElementById("temp-like");
+const humidity = document.getElementById("humid");
+const windSpeed = document.getElementById("wind");
+const visibility = document.getElementById("visible");
 const weekday = [
   "Sunday",
   "Monday",
@@ -8,16 +15,41 @@ const weekday = [
   "Friday",
   "Saturday",
 ];
-// let url = `https://api.openweathermap.org/data/2.5/weather?q=surat&appid=a426dd50b8b4887bd4328c35f555359f`;
-// fetch(url)
-//   .then((res) => res.json())
-//   .then((res) => (loc.innerText = res.base));
+let url = `https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=a426dd50b8b4887bd4328c35f555359f`;
+fetch(url)
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+    let temp = Math.round(data.main.temp);
+    let minTemp = Math.floor(data.main.temp_min);
+    let maxTemp = Math.ceil(data.main.temp_min);
+    let tempLike = Math.round(data.main.feels_like);
+    mainTemp.innerHTML = `${temp}&#176;`;
+    min.innerHTML = `${minTemp}&#176;`;
+    max.innerHTML = `${maxTemp}&#176;`;
+    feelsLike.innerHTML = `${tempLike}&#176;`;
+    return data;
+  })
+  .then((data) => {
+    let humid = data.main.humidity;
+    humidity.innerText = humid + "%";
+    return data;
+  })
+  .then((data) => {
+    let wind = data.wind.speed;
+    windSpeed.innerText = wind + "km/h";
+    return data;
+  })
+  .then((data) => {
+    let visible = data.visibility / 1000;
+    visibility.innerText = visible + "km";
+  });
 
 let day = document.getElementById("day");
 let time = document.getElementById("time");
 let today = new Date();
 let hours = today.getHours();
-console.log(hours);
+// console.log(hours);
 today = weekday[today.getDay()];
 today = today.toUpperCase();
 day.innerText = today;
