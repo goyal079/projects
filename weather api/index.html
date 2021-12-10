@@ -16,13 +16,14 @@
         box-sizing: border-box;
       }
       .container {
-        background-color: rgb(216, 216, 216);
+        background-color: rgb(175, 169, 169);
         width: 370px;
         height: 650px;
         margin: 3% auto;
         border-radius: 7%;
         padding: 0.7em;
         padding-top: 3em;
+        font-family: "Montserrat";
       }
       .screen {
         background-color: #fff;
@@ -40,19 +41,51 @@
 
       #location {
         padding: 0.4rem;
-        font-family: "Montserrat";
         font-weight: 600;
         letter-spacing: 0.15rem;
       }
-      #main {
-        display: flex;
+      .data-box {
+        /* border: 1px solid blue; */
         width: 100%;
         height: 62%;
         margin-bottom: 0.5rem;
+        position: relative;
+      }
+      #main {
+        position: absolute;
+        bottom: 0;
+        /* border: 1px solid black; */
+        display: flex;
+        width: 100%;
         padding: 0 2rem;
+        justify-content: space-between;
       }
       .temp {
         font-family: "Lato";
+        padding: 0.7rem;
+      }
+      .details {
+        width: 60%;
+        padding-top: 0.8rem;
+      }
+      .head {
+        margin: 0.4rem;
+        font-weight: 500;
+        color: rgb(48, 48, 48);
+        letter-spacing: 0.1rem;
+        border-bottom: 1px solid rgb(53, 53, 53);
+      }
+      .detail {
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+        font-weight: 500;
+        font-size: 10px;
+        padding: 0 0.3rem;
+      }
+      .detail-info {
+        font-family: "Lato";
+        width: 30%;
       }
       #prime-temp {
         font-size: 3rem;
@@ -62,11 +95,11 @@
       }
       #up {
         font-size: 1.5rem;
-        color: rgb(2, 75, 2);
+        color: rgb(3, 117, 3);
       }
       #down {
         font-size: 1.5rem;
-        color: rgb(4, 4, 104);
+        color: rgb(7, 7, 134);
       }
       .thumb {
         background-color: #fff;
@@ -77,25 +110,18 @@
       }
       .bottom {
         height: 30%;
-        width: 70%;
+        width: 75%;
         margin: 0 auto;
-        font-family: "Montserrat";
         font-size: 1.2rem;
         letter-spacing: 0.15rem;
         font-weight: 600;
         color: rgb(92, 92, 92);
       }
-      #day {
+      .day-time {
         text-align: center;
         padding-top: 1.4rem;
-        border-top: 1px solid rgb(133, 132, 132);
+        border-top: thin solid rgb(90, 89, 89);
         height: 52%;
-      }
-      #time {
-        height: 52%;
-        padding-top: 1.4rem;
-        text-align: center;
-        border-top: 1px solid rgb(133, 132, 132);
       }
     </style>
   </head>
@@ -107,16 +133,37 @@
           <p id="location">PARIS</p>
           <img src="./search.png" id="search" alt="" />
         </div>
-        <div id="main">
-          <div class="temp">
-            <div id="prime-temp">21&#176;</div>
-            <span id="up">&#9652;</span><span id="max">22</span>
-            <span id="down">&#9662;</span><span id="min">19</span>
+        <div class="data-box">
+          <div id="main">
+            <div class="temp">
+              <div id="prime-temp">21&#176;</div>
+              <span id="up">&#9652;</span><span id="max">22</span>
+              <span id="down">&#9662;</span><span id="min">19</span>
+            </div>
+            <div class="details">
+              <p class="head">DETAILS</p>
+              <div class="detail">
+                <span class="detail-tag">FEELS LIKE</span>
+                <span class="detail-info" id="temp-like">21&#176;</span>
+              </div>
+              <div class="detail">
+                <span class="detail-tag">HUMIDITY</span>
+                <span class="detail-info" id="humid">7.06km/h</span>
+              </div>
+              <div class="detail">
+                <span class="detail-tag">WIND</span>
+                <span class="detail-info" id="wind">21</span>
+              </div>
+              <div class="detail">
+                <span class="detail-tag">VISIBILTY</span>
+                <span class="detail-info" id="visible">21</span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="bottom">
-          <div id="day">SUNDAY</div>
-          <div id="time">MORNING</div>
+          <div class="day-time" id="day">SUNDAY</div>
+          <div class="day-time" id="time">MORNING</div>
         </div>
       </div>
       <div class="thumb"></div>
