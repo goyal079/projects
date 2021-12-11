@@ -76,7 +76,7 @@ const minute = document.getElementById("minute");
 const dayOfWeek = document.getElementById("weekday");
 const dayOfMonth = document.getElementById("month");
 
-function daynDate(city) {
+function clockwidget(city) {
   let url = `https://timezone.abstractapi.com/v1/current_time/?api_key=3833118c05c5443aa1ec7aeef74b2948&location=${city}`;
   fetch(url)
     .then((res) => res.json())
@@ -89,24 +89,18 @@ function daynDate(city) {
       }
       day.innerText = `${today}`;
       dayOfWeek.innerText = today + ",";
-      return data.datetime.split(" ")[0];
+      return data.datetime;
     })
-    .then((date) => {
+    .then((dnT) => {
+      let date = dnT.split(" ")[0];
       console.log(date);
       let day = date.split("-")[2];
       let dateValue = date.split("-")[1];
       dayOfMonth.innerHTML = `${day}<sup>th</sup> ${months[dateValue - 1]}`;
-    });
-}
-function clock(city) {
-  let url = `https://timezone.abstractapi.com/v1/current_time/?api_key=3833118c05c5443aa1ec7aeef74b2948&location=${city}`;
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => data.datetime)
-    .then((dnT) => {
-      return dnT.split(" ")[1];
+      return dnT;
     })
-    .then((widget) => {
+    .then((dnT) => {
+      let widget = dnT.split(" ")[1];
       let widgetArr = widget.split(":");
       hour.innerText = widgetArr[0];
       minute.innerText = widgetArr[2];
@@ -119,8 +113,7 @@ city.addEventListener("input", (e) => {
     loc.innerText = cityName;
     modal.style.display = "none";
     changeWeather(cityName);
-    daynDate(cityName);
-    clock(cityName);
+    clockwidget(cityName);
   });
 });
 // let today = new Date();
