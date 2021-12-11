@@ -55,14 +55,7 @@ function changeWeather(city) {
 search.addEventListener("click", () => {
   modal.style.display = "block";
 });
-city.addEventListener("input", (e) => {
-  btn.addEventListener("click", () => {
-    let cityName = city.value;
-    loc.innerText = cityName;
-    modal.style.display = "none";
-    changeWeather(cityName);
-  });
-});
+
 // Day & Time of the day
 const months = [
   "January",
@@ -80,15 +73,14 @@ const months = [
 ];
 const hour = document.getElementById("hour");
 const minute = document.getElementById("minute");
-const seconds = document.getElementById("second");
 const dayOfWeek = document.getElementById("weekday");
 const dayOfMonth = document.getElementById("month");
-function clock(city) {
+
+function daynDate(city) {
   let url = `https://timezone.abstractapi.com/v1/current_time/?api_key=3833118c05c5443aa1ec7aeef74b2948&location=${city}`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       let today = new Date();
       if (data.gmt_offset >= 0) {
         today = weekday[today.getDay()];
@@ -97,23 +89,40 @@ function clock(city) {
       }
       day.innerText = `${today}`;
       dayOfWeek.innerText = today + ",";
-      return data.datetime;
+      return data.datetime.split(" ")[0];
     })
-    .then((dnT) => {
-      console.log(dnT);
-      let date = dnT.split(" ")[0];
+    .then((date) => {
+      console.log(date);
       let day = date.split("-")[2];
       let dateValue = date.split("-")[1];
       dayOfMonth.innerHTML = `${day}<sup>th</sup> ${months[dateValue - 1]}`;
+    });
+}
+function clock(city) {
+  let url = `https://timezone.abstractapi.com/v1/current_time/?api_key=3833118c05c5443aa1ec7aeef74b2948&location=${city}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => data.datetime)
+    .then((dnT) => {
       return dnT.split(" ")[1];
     })
     .then((widget) => {
-      console.log(widget);
-      hour.innerText
+      let widgetArr = widget.split(":");
+      hour.innerText = widgetArr[0];
+      minute.innerText = widgetArr[2];
     });
 }
-clock("surat");
 
+city.addEventListener("input", (e) => {
+  btn.addEventListener("click", () => {
+    let cityName = city.value;
+    loc.innerText = cityName;
+    modal.style.display = "none";
+    changeWeather(cityName);
+    daynDate(cityName);
+    clock(cityName);
+  });
+});
 // let today = new Date();
 // let hours = today.getHours();
 // today = weekday[today.getDay()];
@@ -135,17 +144,3 @@ clock("surat");
 //   }
 // }
 // hourSwitch(hours);
-
-// // clock widget
-// var loc = "35.731252, 139.730291"; // Tokyo expressed as lat,lng tuple
-// var targetDate = new Date(); // Current date/time of user computer
-// var timestamp =
-//   targetDate.getTime() / 1000 + targetDate.getTimezoneOffset() * 60; // Current UTC date/time expressed as seconds since midnight, January 1, 1970 UTC
-// var apikey = "YOUR_TIMEZONE_API_KEY_HERE";
-// var apicall =
-//   "https://maps.googleapis.com/maps/api/timezone/json?location=" +
-//   loc +
-//   "×tamp=" +
-//   timestamp +
-//   "&key=" +
-//   apikey;
