@@ -10,6 +10,8 @@ const city = document.getElementById("city");
 const modal = document.getElementById("modal");
 const btn = document.getElementById("btn");
 const search = document.getElementById("search");
+const day = document.getElementById("day");
+const time = document.getElementById("time");
 const weekday = [
   "Sunday",
   "Monday",
@@ -19,12 +21,12 @@ const weekday = [
   "Friday",
   "Saturday",
 ];
+
 function changeWeather(city) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=a426dd50b8b4887bd4328c35f555359f`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       let temp = Math.round(data.main.temp);
       let minTemp = Math.floor(data.main.temp_min);
       let maxTemp = Math.ceil(data.main.temp_min);
@@ -47,7 +49,6 @@ function changeWeather(city) {
     })
     .then((data) => {
       let visible = data.visibility / 1000;
-      console.log(visible);
       visibility.innerText = visible + "km";
     });
 }
@@ -63,26 +64,88 @@ city.addEventListener("input", (e) => {
   });
 });
 // Day & Time of the day
-let day = document.getElementById("day");
-let time = document.getElementById("time");
-let today = new Date();
-let hours = today.getHours();
-today = weekday[today.getDay()];
-today = today.toUpperCase();
-day.innerText = today;
-function hourSwitch(hour) {
-  switch (true) {
-    case hour > 4 && hour < 12:
-      time.innerText = "MORNING";
-      break;
-    case hour > 12 && hour < 18:
-      time.innerText = "NOON";
-      break;
-    case hour > 18 && hour < 21:
-      time.innerText = "EVENING";
-      break;
-    case hour > 21 || hour < 4:
-      time.innerText = "NIGHT";
-  }
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+const hour = document.getElementById("hour");
+const minute = document.getElementById("minute");
+const seconds = document.getElementById("second");
+const dayOfWeek = document.getElementById("weekday");
+const dayOfMonth = document.getElementById("month");
+function clock(city) {
+  let url = `https://timezone.abstractapi.com/v1/current_time/?api_key=3833118c05c5443aa1ec7aeef74b2948&location=${city}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      let today = new Date();
+      if (data.gmt_offset >= 0) {
+        today = weekday[today.getDay()];
+      } else {
+        today = weekday[today.getDay() - 1];
+      }
+      day.innerText = `${today}`;
+      dayOfWeek.innerText = today + ",";
+      return data.datetime;
+    })
+    .then((dnT) => {
+      console.log(dnT);
+      let date = dnT.split(" ")[0];
+      let day = date.split("-")[2];
+      let dateValue = date.split("-")[1];
+      dayOfMonth.innerHTML = `${day}<sup>th</sup> ${months[dateValue - 1]}`;
+      return dnT.split(" ")[1];
+    })
+    .then((widget) => {
+      console.log(widget);
+      hour.innerText
+    });
 }
-hourSwitch(hours);
+clock("surat");
+
+// let today = new Date();
+// let hours = today.getHours();
+// today = weekday[today.getDay()];
+// today = today.toUpperCase();
+// day.innerText = today;
+// function hourSwitch(hour) {
+//   switch (true) {
+//     case hour > 4 && hour < 12:
+//       time.innerText = "MORNING";
+//       break;
+//     case hour > 12 && hour < 18:
+//       time.innerText = "NOON";
+//       break;
+//     case hour > 18 && hour < 21:
+//       time.innerText = "EVENING";
+//       break;
+//     case hour > 21 || hour < 4:
+//       time.innerText = "NIGHT";
+//   }
+// }
+// hourSwitch(hours);
+
+// // clock widget
+// var loc = "35.731252, 139.730291"; // Tokyo expressed as lat,lng tuple
+// var targetDate = new Date(); // Current date/time of user computer
+// var timestamp =
+//   targetDate.getTime() / 1000 + targetDate.getTimezoneOffset() * 60; // Current UTC date/time expressed as seconds since midnight, January 1, 1970 UTC
+// var apikey = "YOUR_TIMEZONE_API_KEY_HERE";
+// var apicall =
+//   "https://maps.googleapis.com/maps/api/timezone/json?location=" +
+//   loc +
+//   "×tamp=" +
+//   timestamp +
+//   "&key=" +
+//   apikey;
