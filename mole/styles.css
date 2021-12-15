@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.nav {
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+.score {
+  display: flex;
+  border: 1px solid black;
+}
+.time {
+  display: flex;
+  border: 1px solid black;
+}
+
+header {
+  background-color: aqua;
+  text-align: center;
+}
+.square {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
