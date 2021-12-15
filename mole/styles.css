@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-image: url("back.png");
+  background-repeat: no-repeat;
+}
 .nav {
   display: flex;
   border: 1px solid black;
@@ -23,7 +27,21 @@ header {
   text-align: center;
 }
 .square {
-  width: 200px;
-  height: 200px;
+  width: 33.3%;
+  height: 33.3%;
   border: 1px solid black;
+}
+#grid {
+  margin: 100px auto;
+  border: solid black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  width: 400px;
+  height: 400px;
+}
+.mole {
+  background-image: url("mole.jpg");
+  background-size: cover;
 }
