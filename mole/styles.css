@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
 }
 body {
   background-image: url("back.png");
@@ -12,19 +13,22 @@ body {
   display: flex;
   border: 1px solid black;
   justify-content: space-between;
+  margin-top: 10rem;
   padding: 1rem 2rem;
 }
-.score {
-  display: flex;
-  border: 1px solid black;
-}
-.time {
+
+.nav-comp {
+  color: rgb(78, 55, 28);
   display: flex;
   border: 1px solid black;
 }
 
 header {
   text-align: center;
+  margin: 2rem;
+  border: 1px solid;
+  letter-spacing: 0.35rem;
+  color: rgb(16, 48, 88);
 }
 .square {
   width: 30%;
@@ -32,13 +36,12 @@ header {
   border: 1px solid black;
 }
 #grid {
-  margin: 100px auto;
+  margin: 20px auto;
   border: solid black;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  /* align-content: space-around; */
-  width: 60vw;
+  width: 55vw;
   height: 50vh;
 }
 .mole {
