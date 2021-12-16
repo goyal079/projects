@@ -13,6 +13,10 @@
       crossorigin="anonymous"
     />
     <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
     />
@@ -427,10 +431,57 @@
         </div>
       </div>
     </section>
+
+    <!-- contact&map -->
+    <section class="p-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md">
+            <h2 class="text-center- mb-4">Contact Info</h2>
+            <ul class="list-group list-group-flush lead">
+              <li class="list-gorup-item">
+                <span class="fw-bold">Main Location:</span>10 ,Downing St.
+                London UK
+              </li>
+              <li class="list-gorup-item">
+                <span class="fw-bold">Student Phone:</span>10 ,Downing St.
+                London UK
+              </li>
+              <li class="list-gorup-item">
+                <span class="fw-bold">Enrollment Phone:</span>10 ,Downing St.
+                London UK
+              </li>
+              <li class="list-gorup-item">
+                <span class="fw-bold">Student Email:</span>10 ,Downing St.
+                London UK
+              </li>
+              <li class="list-gorup-item">
+                <span class="fw-bold">Enrollment Email:</span>10 ,Downing St.
+                London UK
+              </li>
+            </ul>
+          </div>
+          <div class="col-md">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+    </section>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoiZ295YWwxMyIsImEiOiJja3g4dG00MjYwN3hzMnZrdGF2bXFzejRzIn0.jrjnw5NjY_BuwfeYH1nUGA";
+      const map = new mapboxgl.Map({
+        container: "map", // container ID
+        style: "mapbox://styles/mapbox/streets-v11", // style URL
+        center: [-74.5, 40], // starting position [lng, lat]
+        zoom: 9, // starting zoom
+      });
+    </script>
   </body>
 </html>
