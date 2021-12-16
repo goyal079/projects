@@ -2,4 +2,9 @@
   .news-input {
     width: 50%;
   }
-} ;
+}
+body::before {
+  display: block;
+  content: "";
+  height: 60px;
+}
