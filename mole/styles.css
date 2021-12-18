@@ -9,67 +9,71 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+header {
+  border: solid 1px;
+  text-align: center;
+}
 .nav {
   display: flex;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   justify-content: space-between;
-  margin-top: 7rem;
-  padding: 1rem 2rem;
+  padding: 0rem 2rem;
+  align-items: center;
 }
-
+.start {
+  width: 120px;
+  border: 1px solid;
+  transition: all 50ms ease-in;
+}
+.start:hover {
+  transform: scale(1.1);
+  transition: all 50ms ease-in;
+}
 .nav-comp {
   color: rgb(59, 37, 11);
   display: flex;
-  /* border: 1px solid black; */
 }
 
-header {
-  text-align: center;
-  margin: 2rem;
-  /* border: 1px solid; */
-  letter-spacing: 0.35rem;
-  color: rgb(16, 48, 88);
-}
 .square {
-  width: 25%;
-  height: 30%;
-  /* border: 1px solid black; */
+  width: 27%;
+  height: 27%;
   position: relative;
   overflow-y: hidden;
 }
 .hole {
-  position: absolute;
-  left: 23%;
-  bottom: 0;
-  /* border: 1px solid black; */
-  border-radius: 50%;
-  width: 50%;
-  height: 30%;
-  background-color: rgb(51, 20, 3);
-  transform: translateY(5%);
+  position: relative;
+  height: 100%;
 }
-img {
-  height: 5.5rem;
-  width: 8rem;
+.hole img {
   position: absolute;
-  left: 16%;
-  bottom: 0;
-  background-size: contain;
-  transform: translateY(70%);
-  transition: all 200ms ease-in;
+  bottom: -17px;
+  width: 100%;
+  z-index: -1;
+}
+.mole-container {
+  height: 75%;
+  overflow-y: hidden;
+}
+.img {
+  background-image: url("./mole.png");
+  background-size: cover;
+  z-index: 5;
+  height: 100%;
+  transform: translateY(70px);
+
+  transition: all 500ms ease-in-out;
 }
 #grid {
-  margin: 20px auto;
-  /* border: solid black; */
+  margin: 0px auto;
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
   column-gap: 2rem;
   justify-content: space-around;
-  width: 55vw;
-  height: 50vh;
+  width: 40rem;
+  height: 30rem;
 }
 .mole {
-  transform: translateY(0%);
-  transition: all 200ms ease-in;
+  transform: translateY(0);
+  transition: all 500ms ease-in-out;
 }
