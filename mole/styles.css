@@ -10,19 +10,16 @@ body {
   background-size: cover;
 }
 header {
-  border: solid 1px;
   text-align: center;
 }
 .nav {
   display: flex;
-  border: 1px solid black;
   justify-content: space-between;
   padding: 0rem 2rem;
   align-items: center;
 }
 .start {
   width: 120px;
-  border: 1px solid;
   transition: all 50ms ease-in;
 }
 .start:hover {
