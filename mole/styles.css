@@ -51,12 +51,6 @@ header {
   height: 75%;
   overflow-y: hidden;
 }
-.bam {
-  position: absolute;
-  height: 60%;
-  width: 100%;
-  z-index: 50;
-}
 .img {
   background-image: url("./mole.png");
   background-size: cover;
