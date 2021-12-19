@@ -2,6 +2,7 @@ const square = document.querySelectorAll(".square");
 const mole = document.querySelectorAll(".mole");
 const timeLeft = document.querySelector("#time-left");
 const startBtn = document.getElementById("start");
+var audio = new Audio("whack.mp3");
 let score = document.querySelector("#score ");
 let seconds;
 let result;
@@ -21,6 +22,7 @@ square.forEach((sqr) => {
     if (sqr.id === smashPos) {
       result += 1;
       score.innerText = result;
+      audio.play();
     }
   });
 });
