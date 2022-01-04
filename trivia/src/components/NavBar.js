@@ -1,4 +1,4 @@
-const NavBar = () => {
+const NavBar = (props) => {
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 bg-success"
@@ -16,7 +16,17 @@ const NavBar = () => {
       <hr />
       <h4 className="ms-2">Categories</h4>
       <ul className="nav nav-pills mb-auto mt-2 mx-auto">
-        <li className="border-bottom">
+        {props.items.map((category) => (
+          <li className="border-bottom" key={category.id}>
+            <a href="/" className="nav-link link-light">
+              {/Entertainment:/.test(category.name) ||
+              /Science:/.test(category.name)
+                ? category.name.split(":")[1]
+                : category.name}
+            </a>
+          </li>
+        ))}
+        {/* <li className="border-bottom">
           <a href="/" className="nav-link link-light">
             Dashboard
           </a>
@@ -30,7 +40,7 @@ const NavBar = () => {
           <a href="/" className="nav-link link-light">
             Products
           </a>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
