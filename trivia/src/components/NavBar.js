@@ -26,21 +26,6 @@ const NavBar = (props) => {
             </a>
           </li>
         ))}
-        {/* <li className="border-bottom">
-          <a href="/" className="nav-link link-light">
-            Dashboard
-          </a>
-        </li>
-        <li className="border-bottom">
-          <a href="/" className="nav-link link-light">
-            Orders
-          </a>
-        </li>
-        <li className="border-bottom">
-          <a href="/" className="nav-link link-light">
-            Products
-          </a>
-        </li> */}
       </ul>
     </div>
   );
