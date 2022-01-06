@@ -9,7 +9,7 @@ const NavBar = (props) => {
         className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none"
       >
         <svg className="bi me-2" width="40" height="32">
-          <use xlinkhref="#bootstrap" />
+          <use xlinkHref="#bootstrap" />
         </svg>
         <span className="fs-4 text-light">Home</span>
       </a>

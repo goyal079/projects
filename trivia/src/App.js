@@ -8,17 +8,14 @@ class App extends Component {
     super(props);
     this.state = {
       cat: [],
-      misc: [],
     };
   }
   async componentDidMount() {
-    let [a, b] = await Promise.all([
-      fetch("https://opentdb.com/api_category.php").then((res) => res.json()),
-      fetch("https://opentdb.com/api.php?amount=10").then((res) => res.json()),
-    ]);
+    let a = await fetch("https://opentdb.com/api_category.php").then((res) =>
+      res.json()
+    );
     a = a.trivia_categories;
-    b = b.results;
-    this.setState({ cat: a, misc: b });
+    this.setState({ cat: a });
   }
   render() {
     return (
@@ -26,15 +23,8 @@ class App extends Component {
         <Router>
           <NavBar items={this.state.cat} />
           <Routes>
-            <Route
-              exact
-              path="/"
-              element={<Quiz questions={this.state.misc} />}
-            ></Route>
-            <Route
-              path="/quiz"
-              element={<Quiz questions={this.state.misc} />}
-            ></Route>
+            <Route exact path="/" element={<Screen />}></Route>
+            <Route path="/quiz" element={<Quiz />}></Route>
           </Routes>
         </Router>
       </div>
