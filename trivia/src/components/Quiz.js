@@ -1,5 +1,4 @@
 import React from "react";
-
 class Quiz extends React.Component {
   constructor(props) {
     super(props);
@@ -7,6 +6,10 @@ class Quiz extends React.Component {
       questions: null,
       curr: null,
       fetched: false,
+      responded: false,
+      answer: "",
+      score: 0,
+      count: 0,
     };
   }
   async componentDidMount() {
@@ -26,10 +29,30 @@ class Quiz extends React.Component {
     this.setState({ questions: arr, curr: arr[0], fetched: true });
     console.log(this.state.curr);
   }
+  handleAnswer = (e) => {
+    this.setState({
+      responded: true,
+      answer: e.target.value,
+    });
+  };
+  next = async () => {
+    await this.setState((prevState) => ({
+      curr: prevState.questions[prevState.count + 1],
+      count: prevState.count + 1,
+      responded: false,
+      answer: "",
+    }));
+    console.log(this.state.questions);
+  };
   render() {
     return (
       this.state.fetched && (
-        <form>
+        <form
+          className="border mx-auto mt-5 w-75 p-4"
+          style={{ height: "300px" }}
+          onChange={this.handleAnswer}
+          onSubmit={this.next}
+        >
           <legend>{this.state.curr.question}</legend>
 
           <div className="form-check">
@@ -38,7 +61,7 @@ class Quiz extends React.Component {
               type="radio"
               name="gridRadios"
               id="gridRadios1"
-              value="option1"
+              value={this.state.curr.options[0]}
             />
             <label className="form-check-label" htmlFor="gridRadios1">
               {this.state.curr.options[0]}
@@ -50,7 +73,7 @@ class Quiz extends React.Component {
               type="radio"
               name="gridRadios"
               id="gridRadios2"
-              value="option2"
+              value={this.state.curr.options[1]}
             />
             <label className="form-check-label" htmlFor="gridRadios2">
               {this.state.curr.options[1]}
@@ -62,7 +85,7 @@ class Quiz extends React.Component {
               type="radio"
               name="gridRadios"
               id="gridRadios3"
-              value="option3"
+              value={this.state.curr.options[2]}
             />
             <label className="form-check-label" htmlFor="gridRadios3">
               {this.state.curr.options[2]}
@@ -74,12 +97,19 @@ class Quiz extends React.Component {
               type="radio"
               name="gridRadios"
               id="gridRadios3"
-              value="option3"
+              value={this.state.curr.options[3]}
             />
             <label className="form-check-label" htmlFor="gridRadios3">
               {this.state.curr.options[3]}
             </label>
           </div>
+          <button
+            className="btn btn-primary"
+            type="submit"
+            disabled={!this.state.responded}
+          >
+            Next
+          </button>
         </form>
       )
     );
