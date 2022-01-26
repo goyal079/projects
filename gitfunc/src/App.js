@@ -23,19 +23,19 @@ const App = () => {
             <Navbar logo="fab fa-github" appName=" Github App" />
             <div className="container">
               <Switch>
-                <Route path="/about">
-                  <Route exact path="/about">
+                <Route path="/githubProject/about">
+                  <Route exact path="/githubProject/about">
                     <About teamMember="Us" />
                   </Route>
-                  <Route exact path="/about/mansoor">
+                  <Route exact path="/githubProject/about/mansoor">
                     <About teamMember="Mansoor" />
                   </Route>
                 </Route>
                 <Route
-                  path="/user/:id"
+                  path="/githubProject/user/:id"
                   render={(props) => <User {...props} />}
                 />
-                <Route exact path="/">
+                <Route exact path="/githubProject">
                   <AllUsers />
                 </Route>
                 <Route>
