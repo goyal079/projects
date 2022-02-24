@@ -2,7 +2,7 @@ const square = document.querySelectorAll(".square");
 const mole = document.querySelectorAll(".mole");
 const timeLeft = document.querySelector("#time-left");
 const startBtn = document.getElementById("start");
-var audio = new Audio("./whack.mp3");
+var audio = new Audio("./assets/whack.mp3");
 let score = document.querySelector("#score ");
 let seconds;
 let result;
